@@ -42,7 +42,19 @@ class Ball {
  
  
  boolean isTouching( Ball other ) {
- 
+    if ((int)(this.x) == (int)(other.x) && (int)(this.y) == (int)(other.y)) {state = GROWING;}
+    if (state == GROWING) {
+      dx = 0;
+      dy = 0;
+      for (int i = 0; i < 10; i ++ ) 
+        {rad += 2;}
+        state = SHRINKING;
+      }
+    if (state == SHRINKING) {
+      while (rad != 0) {rad --;}
+      state = DEAD;
+      }
+    if (state == DEAD) {//}
  }
  
   
